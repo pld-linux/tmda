@@ -4,16 +4,16 @@ Summary(pl):	Agent (MDA) dostarczaj±cy oznaczone wiadomo¶ci
 Name:		tmda
 Version:	0.80
 Release:	1
-Source0:	http://tmda.net/releases/%{name}-%{version}.tgz
-# Source0-md5:	2d724818d30799391eb8ab0901347dec
 License:	GPL
 Group:		Networking/Daemons
-%pyrequires_eq  python
+Source0:	http://tmda.net/releases/%{name}-%{version}.tgz
+# Source0-md5:	2d724818d30799391eb8ab0901347dec
+URL:		http://tmda.sourceforge.net/
 BuildRequires:	python-devel >= 2.2.1
 BuildRequires:	rpm-pythonprov
+%pyrequires_eq  python
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-URL:		http://tmda.sourceforge.net/
 
 %description
 TMDA is an OSI certified software application designed to
