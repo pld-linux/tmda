@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.python
 Summary:	Tagged Message Delivery Agent
 Summary(pl):	Agent (MDA) dostarczaj±cy oznaczone wiadomo¶ci
 Name:		tmda
