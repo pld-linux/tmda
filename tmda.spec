@@ -2,14 +2,13 @@
 Summary:	Tagged Message Delivery Agent
 Summary(pl):	Agent (MDA) dostarczaj±cy oznaczone wiadomo¶ci
 Name:		tmda
-Version:	1.0
-Release:	0.9
+Version:	1.1.3
+Release:	0.99
 License:	GPL
 Group:		Networking/Daemons
-Source0:	http://tmda.net/releases/%{name}-%{version}.tgz
-# Source0-md5:	6823af3edeffcf390ec4dc630a46f8c0
+Source0:	http://tmda.net/releases/unstable/%{name}-%{version}.tgz
 URL:		http://tmda.sourceforge.net/
-BuildRequires:	python-devel >= 2.2.1
+BuildRequires:	python-devel >= 2.3.0
 BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python
 BuildArch:	noarch
@@ -53,7 +52,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog CRYPTO README THANKS UPGRADE contrib/sample.config htdocs
+%doc ChangeLog CRYPTO README THANKS UPGRADE contrib htdocs
 %attr(755,root,root) %{_bindir}/*
 %dir %{py_libdir}/TMDA
 %{py_libdir}/TMDA/*.py[co]
