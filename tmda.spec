@@ -1,9 +1,9 @@
-%include        /usr/lib/rpm/macros.python
+%include	/usr/lib/rpm/macros.python
 Summary:	Tagged Message Delivery Agent
 Summary(pl):	Agent (MDA) dostarczaj±cy oznaczone wiadomo¶ci
 Name:		tmda
 Version:	0.81
-Release:	1
+Release:	2
 License:	GPL
 Group:		Networking/Daemons
 Source0:	http://tmda.net/releases/%{name}-%{version}.tgz
@@ -11,7 +11,7 @@ Source0:	http://tmda.net/releases/%{name}-%{version}.tgz
 URL:		http://tmda.sourceforge.net/
 BuildRequires:	python-devel >= 2.2.1
 BuildRequires:	rpm-pythonprov
-%pyrequires_eq  python
+%pyrequires_eq	python
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -38,7 +38,6 @@ python ./compileall
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/tmda,%{py_libdir}/TMDA}
-install -d $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}/htdocs
 
 install bin/tmda-* $RPM_BUILD_ROOT%{_bindir}
 install templates/*.txt $RPM_BUILD_ROOT%{_datadir}/tmda
@@ -47,18 +46,14 @@ install contrib/{collectaddys,printcdb,printdbm} $RPM_BUILD_ROOT%{_bindir}
 
 %py_ocomp $RPM_BUILD_ROOT%{py_libdir}
 %py_comp $RPM_BUILD_ROOT%{py_libdir}
-cp -f htdocs/{*.html,README} $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}/htdocs
-cp -f ChangeLog CRYPTO INSTALL README THANKS UPGRADE contrib/sample* \
-	$RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
-# compress %%doc manually; automation does not work in this case
-gzip -9 $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}/{ChangeLog,CRYPTO,INSTALL,README,THANKS,UPGRADE,htdocs/README}
+rm -f htdocs/{ChangeLog,Makefile,*.h,*.ht,*.py*,*.tpl}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc %{_docdir}/%{name}-%{version}
+%doc ChangeLog CRYPTO README THANKS UPGRADE contrib/sample.config htdocs
 %attr(755,root,root) %{_bindir}/*
 %dir %{py_libdir}/TMDA
 %{py_libdir}/TMDA/*.py[co]
