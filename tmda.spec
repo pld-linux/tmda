@@ -11,6 +11,7 @@ URL:		http://tmda.sourceforge.net/
 BuildRequires:	python-devel >= 2.3.3
 BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -35,16 +36,16 @@ python ./compileall
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/tmda,%{py_libdir}/site-packages/TMDA,%{py_libdir}/site-packages/TMDA/pythonlib/email}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/tmda,%{py_scriptdir}/site-packages/TMDA/pythonlib/email}
 
 install bin/tmda-* $RPM_BUILD_ROOT%{_bindir}
 install templates/*.txt $RPM_BUILD_ROOT%{_datadir}/tmda
-install TMDA/*.{py,pyc} $RPM_BUILD_ROOT%{py_libdir}/site-packages/TMDA
-install TMDA/pythonlib/email/*.{py,pyc} $RPM_BUILD_ROOT%{py_libdir}/site-packages/TMDA/pythonlib/email
+install TMDA/*.{py,pyc} $RPM_BUILD_ROOT%{py_scriptdir}/site-packages/TMDA
+install TMDA/pythonlib/email/*.{py,pyc} $RPM_BUILD_ROOT%{py_scriptdir}/site-packages/TMDA/pythonlib/email
 install contrib/{collectaddys,printcdb,printdbm} $RPM_BUILD_ROOT%{_bindir}
 
-%py_ocomp $RPM_BUILD_ROOT%{py_libdir}
-%py_comp $RPM_BUILD_ROOT%{py_libdir}
+%py_ocomp $RPM_BUILD_ROOT%{py_scriptdir}
+%py_comp $RPM_BUILD_ROOT%{py_scriptdir}
 rm -f htdocs/{ChangeLog,Makefile,*.h,*.ht,*.py*,*.tpl}
 
 %clean
@@ -54,8 +55,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog CRYPTO README THANKS UPGRADE contrib htdocs
 %attr(755,root,root) %{_bindir}/*
-%dir %{py_libdir}/site-packages/TMDA
-%{py_libdir}/site-packages/TMDA/*.py[co]
-%dir %{py_libdir}/site-packages/TMDA/pythonlib/email
-%{py_libdir}/site-packages/TMDA/pythonlib/email/*.py[co]
+%dir %{py_scriptdir}/site-packages/TMDA
+%{py_scriptdir}/site-packages/TMDA/*.py[co]
+%dir %{py_scriptdir}/site-packages/TMDA/pythonlib/email
+%{py_scriptdir}/site-packages/TMDA/pythonlib/email/*.py[co]
 %{_datadir}/tmda
