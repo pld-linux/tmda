@@ -5,6 +5,7 @@ Name:		tmda
 Version:	0.77
 Release:	1
 Source0:	http://tmda.net/releases/%{name}-%{version}.tgz
+# Source0-md5:	684dbef974f0ced98b5d7b63ebad42ef
 License:	GPL
 Group:		Networking/Daemons
 %pyrequires_eq  python
