@@ -2,7 +2,7 @@
 Summary:	Tagged Message Delivery Agent
 Summary(pl):	Agent (MDA) dostarczaj±cy oznaczone wiadomo¶ci
 Name:		tmda
-Version:	0.59
+Version:	0.62
 Release:	1
 Source0:	http://tmda.net/releases/%{name}-%{version}.tgz
 License:	GPL
