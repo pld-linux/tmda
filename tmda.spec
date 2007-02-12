@@ -1,5 +1,5 @@
 Summary:	Tagged Message Delivery Agent
-Summary(pl.UTF-8):   Agent (MDA) dostarczający oznaczone wiadomości
+Summary(pl.UTF-8):	Agent (MDA) dostarczający oznaczone wiadomości
 Name:		tmda
 Version:	1.1.4
 Release:	3
