@@ -1,5 +1,5 @@
 Summary:	Tagged Message Delivery Agent
-Summary(pl):	Agent (MDA) dostarczaj±cy oznaczone wiadomo¶ci
+Summary(pl.UTF-8):   Agent (MDA) dostarczajÄ…cy oznaczone wiadomoÅ›ci
 Name:		tmda
 Version:	1.1.4
 Release:	3
@@ -20,12 +20,12 @@ TMDA combines a "whitelist" (for known/trusted senders), a "blacklist"
 (for undesired senders), and a cryptographically enhanced confirmation
 system (for unknown, but legitimate senders).
 
-%description -l pl
-TMDA to oprogramowanie zaprojektowane by zredukowaæ liczbê spamu,
-który otrzymujesz. TMDA ³±czy w sobie "bia³± listê" (dla znanych /
-zaufanych nadawców), "czarn± listê" (dla niepo¿±danych nadawców) oraz
-system potwierdzania wiadomo¶ci (dla nieznanych ale prawid³owych
-nadawców).
+%description -l pl.UTF-8
+TMDA to oprogramowanie zaprojektowane by zredukowaÄ‡ liczbÄ™ spamu,
+ktÃ³ry otrzymujesz. TMDA Å‚Ä…czy w sobie "biaÅ‚Ä… listÄ™" (dla znanych /
+zaufanych nadawcÃ³w), "czarnÄ… listÄ™" (dla niepoÅ¼Ä…danych nadawcÃ³w) oraz
+system potwierdzania wiadomoÅ›ci (dla nieznanych ale prawidÅ‚owych
+nadawcÃ³w).
 
 %prep
 %setup -q
