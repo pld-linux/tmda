@@ -2,13 +2,14 @@ Summary:	Tagged Message Delivery Agent
 Summary(pl.UTF-8):	Agent (MDA) dostarczający oznaczone wiadomości
 Name:		tmda
 Version:	1.1.4
-Release:	3
+Release:	4
 License:	GPL
 Group:		Networking/Daemons
 Source0:	http://tmda.sf.net/releases/unstable/%{name}-%{version}.tgz
 # Source0-md5:	58c79099ea0cd4bfc48f85de5502a2f2
 URL:		http://tmda.sourceforge.net/
 BuildRequires:	python-devel >= 1:2.3.3
+BuildRequires:	rpmbuild(macros) >= 1.219
 %pyrequires_eq	python
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -46,6 +47,8 @@ install contrib/{collectaddys,printcdb,printdbm} $RPM_BUILD_ROOT%{_bindir}
 %py_ocomp $RPM_BUILD_ROOT%{py_scriptdir}
 %py_comp $RPM_BUILD_ROOT%{py_scriptdir}
 rm -f htdocs/{ChangeLog,Makefile,*.h,*.ht,*.py*,*.tpl}
+
+%py_postclean
 
 %clean
 rm -rf $RPM_BUILD_ROOT
