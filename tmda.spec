@@ -2,7 +2,7 @@ Summary:	Tagged Message Delivery Agent
 Summary(pl.UTF-8):	Agent (MDA) dostarczający oznaczone wiadomości
 Name:		tmda
 Version:	1.1.4
-Release:	4
+Release:	5
 License:	GPL
 Group:		Networking/Daemons
 Source0:	http://tmda.sf.net/releases/unstable/%{name}-%{version}.tgz
@@ -59,6 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %dir %{py_scriptdir}/site-packages/TMDA
 %{py_scriptdir}/site-packages/TMDA/*.py[co]
+%dir %dir %{py_scriptdir}/site-packages/TMDA/pythonlib
 %dir %{py_scriptdir}/site-packages/TMDA/pythonlib/email
 %{py_scriptdir}/site-packages/TMDA/pythonlib/email/*.py[co]
 %{_datadir}/tmda
