@@ -9,6 +9,8 @@ Source0:	http://tmda.sf.net/releases/unstable/%{name}-%{version}.tgz
 # Source0-md5:	58c79099ea0cd4bfc48f85de5502a2f2
 URL:		http://tmda.sourceforge.net/
 BuildRequires:	python-devel >= 1:2.3.3
+BuildRequires:	python-modules
+BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 %pyrequires_eq	python
 BuildArch:	noarch
